@@ -48,15 +48,6 @@ public class ServletCarrito extends HttpServlet {
 		getServletContext().getRequestDispatcher("/vista-carrito.jsp").forward(request, response);
 	}
 
-	private String carritoEnHTML(HashMap<String, Integer> carrito) {
-		String html = "";
-
-		for (String key : carrito.keySet())
-			html += "<p>[" + key + "], " + carrito.get(key) + " unidades</p>";
-
-		return html;
-	}
-
 	private void insertarEnCarrito(HashMap<String, Integer> carrito, String producto) {
 		if (carrito.get(producto) == null)
 			carrito.put(producto, 1);
